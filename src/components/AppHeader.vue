@@ -31,13 +31,7 @@
               >
             </li>
             <li>
-              <router-link
-                class="px-2 text-white"
-                href="#"
-                @click.prevent="userLogOut"
-                :to="{ name: 'home' }"
-                >Logout</router-link
-              >
+              <a class="px-2 text-white" href="#" @click.prevent="usersignOut">Logout</a>
             </li>
           </template>
         </ul>
@@ -61,13 +55,12 @@ export default {
       this.modalStore.isOpen = !this.modalStore.isOpen;
       console.log(this.modalStore.isOpen);
     },
-    async userLogOut() {
+    async usersignOut() {
       await this.userStore.signOut();
-      /*
-            if (this.$route.name === 'manage') {
-              this.$router.push({ name: 'home' });
-            }
-            */
+
+      if (this.$route.name === 'manage') {
+        this.$router.push({ name: 'home' });
+      }
     }
   }
 };
