@@ -75,23 +75,7 @@ export default {
   },
   data() {
     return {
-      tab: 'login',
-      schema: {
-        name: 'required|min:3|max:100|alpha_spaces',
-        email: 'required|min:3|max:100|email',
-        age: 'required|min_value:18|max_value:100',
-        password: 'required|min:3|max:100',
-        confirm_password: 'password_mismatch:@password',
-        country: 'required|country_excluded:Antarctica',
-        tos: 'tos'
-      },
-      loginSchema: {
-        email: 'required|min:3|max:100|email',
-        password: 'required|min:3|max:100'
-      },
-      userData: {
-        country: 'USA'
-      }
+      tab: 'login'
     };
   },
   computed: {

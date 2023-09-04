@@ -31,7 +31,13 @@
               >
             </li>
             <li>
-              <a class="px-2 text-white" href="#" @click.prevent="userLogOut">Logout</a>
+              <router-link
+                class="px-2 text-white"
+                href="#"
+                @click.prevent="userLogOut"
+                :to="{ name: 'home' }"
+                >Logout</router-link
+              >
             </li>
           </template>
         </ul>
@@ -57,6 +63,11 @@ export default {
     },
     async userLogOut() {
       await this.userStore.signOut();
+      /*
+            if (this.$route.name === 'manage') {
+              this.$router.push({ name: 'home' });
+            }
+            */
     }
   }
 };
